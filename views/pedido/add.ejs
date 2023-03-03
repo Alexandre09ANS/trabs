@@ -1,0 +1,21 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post"> 
+        Produto<br>
+        <select class="form-select" name="produto" aria-label="Selecione um produto">
+            <% Produtos.forEach(function(produto) { %>
+              <option value="<%= produto._id %>"><%= produto.codigoBarras %></option>
+            <% }); %>
+        </select>
+        Avaliacao<br>
+        <textarea class="form-control" name="avaliacaoProdutos" placeholder="Avalie o produto comprado"></textarea>
+        <br><br>
+        Cliente<br>
+        <select  class="form-select" name="cliente" aria-label="Selecione um Cliente">
+            <% Clientes.forEach(function(cliente) { %>
+              <option value="<%= cliente._id %>"><%= cliente.nome %></option>
+            <% }); %>
+        </select>
+        <br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+<%- include('../rodape.ejs') %>

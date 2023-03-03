@@ -1,0 +1,30 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar" class="btn btn-primary">
+    </form>
+
+    <table>
+        <tr>
+            <th style="text-align: justify">Id</th>
+            <th style="text-align: justify">Nome</th>
+            <th style="text-align: justify">Celular</th>
+            <th style="text-align: justify">CPF</th>
+            <th style="text-align: justify">Foto</th>
+            <th style="text-align: justify">Editar</th>
+            <th style="text-align: justify">Deletar</th>
+        </tr>
+        <% Clientes.forEach(function(cliente){%>
+        <tr>
+            <td style="text-align: justify"><%=cliente._id %></td>
+            <td style="text-align: justify"><%=cliente.nome %></td>
+            <td style="text-align: justify"><%=cliente.celular %></td>
+            <td style="text-align: justify"><%=cliente.cpf %></td>
+            <td style="text-align: justify"><img style="max-width: 100px; max-height: 100px;" src="/fotos/<%=cliente.foto%>" alt="Foto do cliente"></td>
+            <td style="text-align: justify"><a href="/admin/cliente/edt/<%=cliente.id %>">Editar</a></td>
+            <td style="text-align: justify"><a href="/admin/cliente/del/<%=cliente.id %>">Excluir</a></td>
+        </tr>
+        <% })%>
+    </table>
+<%- include('../rodape.ejs') %>
+    

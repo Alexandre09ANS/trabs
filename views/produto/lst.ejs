@@ -1,0 +1,36 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar" class="btn btn-primary">
+    </form>
+
+    <table>
+        <tr>
+            <th style="text-align: justify">Id</th>
+            <th style="text-align: justify">tipo</th>
+            <th style="text-align: justify">valor</th>
+            <th style="text-align: justify">validade</th>
+            <th style="text-align: justify">quantidade</th>
+            <th style="text-align: justify">codigoBarras</th>
+            <th style="text-align: justify">Foto</th>
+            <th style="text-align: justify">Editar</th>
+            <th style="text-align: justify">Deletar</th>
+        </tr>
+        <% Produtos.forEach(function(produto){%>
+        <tr>
+
+            
+            <td style="text-align: justify"><%=produto._id %></td>
+            <td style="text-align: justify"><%=produto.tipo %></td>
+            <td style="text-align: justify"><%=produto.valor %></td>
+            <td style="text-align: justify"><%=produto.quantidade %></td>
+            <td style="text-align: justify"><%=produto.validade %></td>
+            <td style="text-align: justify"><%=produto.codigoBarras %></td>
+            <td style="text-align: justify"><img style="max-width: 100px; max-height: 100px;" src="/fotos/<%=produto.foto%>" alt="Foto do produto"></td>
+            <td style="text-align: justify"><a href="/admin/produto/edt/<%=produto._id %>">Editar</a></td>
+            <td style="text-align: justify"><a href="/admin/produto/del/<%=produto._id %>">Excluir</a></td>
+        </tr>
+        <% })%>
+    </table>
+<%- include('../rodape.ejs') %>
+    

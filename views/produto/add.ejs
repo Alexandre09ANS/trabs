@@ -1,0 +1,22 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post" enctype="multipart/form-data"> 
+        Nome-Produto<br>
+        <input type="text" name="tipo" placeholder="Informe qual o Produto">
+        <br><br>
+        valor<br>
+        <input type="text" name="valor" placeholder='informe o valor do Produto'>
+        <br><b<br>
+        <input type="date" name="validade" placeholder="Informe a data validade do produto">
+        <br><br>
+        quantidade<br>
+        <input type="text" name="quantidade" placeholder='Informe quantos unidades de tal produto foram compradas'>
+        <br><br>
+        Codigo-de-Barras<br>
+        <input type="text" name="codigoBarras" placeholder='Informe os numeros do codigo de barras'>
+        <br><br>
+        Foto<br>
+        <input type="file" name="foto">
+        <br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+<%- include('../rodape.ejs') %>

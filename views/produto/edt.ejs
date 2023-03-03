@@ -1,0 +1,27 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post" enctype="multipart/form-data">
+        <br><br>
+        Id<br>
+        <input type="text" name="id" readonly value="<%=Produto._id%>">
+        <br><br>
+        tipo<br>
+        <input type="text" name="tipo" placeholder="Informe o tipo do produto" value="<%=Produto.tipo%>">
+        <br><br>
+        valor<br>
+        <input type="text" name="valor" placeholder='Informe o valor do produto' value="<%=Produto.valor%>">
+        <br><br>
+        validade<br>
+        <input type="date" name="validade" placeholder="Informe a validade do produto" value="<%=Produto.validade%>">
+        <br><br>
+        quantidade<br>
+        <input type="text" name="quantidade" placeholder='Informe a quantidade de produtos comprados' value="<%=Produto.quantidade%>">
+        <br><br>
+        Codigo-de-Barras<br>
+        <input type="text" name="codigoBarras" placeholder='Informe o numero do codigo de barras do produto' value="<%=Produto.codigoBarras%>">
+        <br><br>
+        Foto<br>
+        <input type="file" name="foto">
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+<%- include('../rodape.ejs') %>
